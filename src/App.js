@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { connect, useSelector } from 'react-redux';
+import * as actions from './app/actionCreator';
+import RouteElement from './components/Routes/RouteElement';
 
-function App() {
+const mapDispatchToProps = (dispatch)=>{
+  return{
+      authcheck:()=>dispatch(actions.authcheck())
+  }
+}
+const App=({authcheck})=> {
+  const isAdmin = useSelector(state => state?.user_details?.isAdmin);
+
+  React.useEffect(() => {
+    authcheck()
+}, [authcheck])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='h-screen'>
+      <RouteElement isAdmin={isAdmin}/>
     </div>
   );
 }
 
-export default App;
+export default connect(null,mapDispatchToProps)(App);;
