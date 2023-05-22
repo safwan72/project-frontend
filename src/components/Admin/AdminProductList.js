@@ -38,7 +38,7 @@ Admin All Products</h2>
 <button
                 type="button"
                 onClick={handleOpen}
-                className="rounded-md bg-amber-500 px-3 py-2 w-full text-sm font-semibold text-white shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+                className="rounded-md bg-amber-500 px-3 py-2 mt-10 w-full text-sm font-semibold text-white shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
               >
                 Add a new Product
               </button>

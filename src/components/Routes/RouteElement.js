@@ -14,6 +14,7 @@ import { AdminRoutes } from './AdminRoutes';
 import AllUsers from '../Admin/AllUsers';
 import AdminProductList from '../Admin/AdminProductList';
 import CategoryProducts from '../../pages/CategoryProducts';
+import Logout from '../Logout';
 const RouteElement = ({isAdmin}) => {
   return (
     <Routes>
@@ -27,6 +28,8 @@ const RouteElement = ({isAdmin}) => {
     </Route>
     <Route element={<PrivateRoute/>}>
     <Route path="home" exact element={<Home/>}
+/>
+    <Route path="logout" exact element={<Logout/>}
 />
     <Route path="product" exact element={<Product/>}
 />
